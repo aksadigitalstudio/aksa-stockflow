@@ -1,5 +1,9 @@
 # AKSA StockFlow
 
+**[Open the public demo](https://aksa-stockflow.vercel.app/)** · [Source repository](https://github.com/aksadigitalstudio/aksa-stockflow)
+
+The published demo stores data in each visitor’s browser; cloud authentication is not enabled.
+
 A functional inventory and physical stock-count workspace for **Aruna Mart**. React + Vite, with a transactional IndexedDB demo and an optional authenticated Supabase backend. No backend credentials are needed to try it.
 
 ## Run the included build
