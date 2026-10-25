@@ -1,0 +1,3 @@
+import {chromium} from 'playwright';
+import {mkdir} from 'node:fs/promises';
+await mkdir('test-artifacts',{recursive:true});const b=await chromium.launch({channel:'chrome',headless:true});const p=await b.newPage({viewport:{width:1480,height:1050}});const errors=[];p.on('pageerror',e=>errors.push(e.message));p.on('console',m=>{if(m.type()==='error')errors.push(m.text())});await p.goto(process.env.TEST_BASE_URL||'http://127.0.0.1:4500/');await p.getByRole('heading',{name:'Everything in its place.'}).waitFor();await p.screenshot({path:'test-artifacts/dashboard-desktop.png',fullPage:true});console.log(JSON.stringify({title:await p.title(),errors}));await b.close();
