@@ -1,0 +1,3 @@
+[functions.stockflow]
+verify_jwt = false
+# The function explicitly verifies each JWT with auth.getUser() before any data access.
